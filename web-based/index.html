@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADS Ticketing</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="./resources/icon.png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <img src="./resources/front_bg.jpg" class="front_bg">
+    <div class="root-index">
+        <div class="center-row">
+            <div class="message-container">
+                <div class="message acme">
+                    ADS Concert Ticket Booking
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="authentication center-row">
+
+                <div class="login-card signin" id="signin">
+                    <div class="acme card-title text-center">Login</div>
+                    <div class="form-container">
+                        <form action="./auth-php/login.php" method="post" class="center-column">
+                            <input type="email" id="loginEmail" class="form-input" placeholder="Email">
+                            <input type="password" id="loginPwd" class="form-input" placeholder="Password">
+                            <div class="auth-button">
+                                <button class="clear-button"> Clear </button>
+                                <div style="width: 5%;"></div>
+                                <input type="submit" class="login-button" value="Login"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="switch-page acme" style="margin: 10px;" onclick="buttonSwitchToRegister()" >Not registered? Register here</div>
+                </div>
+
+                <div class="register-card flex-column signup" id="signup">
+                    <div class="acme card-title text-center">Register</div>
+                    <div class="form-container">
+                        <form action="./auth-php/register.php" method="POST" class="center-column" id="register-form" onsubmit="submitForm()">
+                            <input name="regFN" id="regFN" type="text" class="form-input" placeholder="Full Name">
+                            <div class="error" id="e-fName">This field is required</div>
+                            <input name="regMPN" id="regMPN" type="text" onclick="this.value = '+60'" class="form-input" placeholder="Mobile Phone Number">
+                            <div class="error" id="e-mobile">Phone number format is wrong</div>
+                            <input name="regEmail" id="regEmail" type="email" class="form-input" placeholder="Email">
+                            <div class="error" id="e-email">Invalid email</div>
+                            <input name="regPwd" id="regPwd" type="password" class="form-input" placeholder="Password">
+                            <div class="error" id="e-pwd">This field is required</div>
+                            <div class="error-password" id="error-password">
+                                <div class="message-error">
+                                    Password are required to this:
+                                    <ul>
+                                        <li id="chars">6 characters or more</li>
+                                        <li id="upper">Atleast ONE uppercase</li>
+                                        <li id="lower">Atleast ONE lowercase</li>
+                                        <li id="spec">Atlease ONE special character</li>
+                                        <li id="nums">Consist of numbers</li>
+                                        <li id="ws">No white spaces</li>
+                                    </ul> 
+                                </div>
+                                <div class="arrow"></div>
+                            </div>
+                            <input id="regCPwd" type="password" class="form-input" placeholder="Confirm Password">
+                            <div class="error" id="e-cpwd">Password does not match</div>
+                            <div class="auth-button">
+                                <button class="clear-button" id="clear"> Clear </button>
+                                <div style="width: 5%;"></div>
+                                <input type="button" class="register-button" onclick="validateForm()" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="switch-page acme" style="margin: 10px;" onclick="buttonSwitchToLogin()" >Registered? Sign in here</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
