@@ -10,68 +10,135 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="modal-container" id="modal-container" style="color: wheat;">
-        <div class="modal" id="modal">
-            <div class="close">
-
-            </div>
-        </div>
-    </div>
-    <div class="root">
-        <div class="container">
-            <div class="navbar-container">
-                <div class="brand acme">
-                    <img src="../../resources/icon.png" height="100px" width="100px" alt="" srcset="">
-                    ADS Concert Ticket Booking
+    <div class="body">
+        <div class="modal-container" id="modal-container">
+            <div class="modal" id="modal">
+                <div class="close" onclick="close_modal()">
+                    <img src="../../resources/close.png" height="45px" width="45px" alt="">
                 </div>
-                <div class="profile">
-                    <div class="profile-image">
-                        <div class="acme image" onclick="profile_action()">
-                            PI 
-                        </div>
-                        <!-- display image if not null spell out name -->
-                        <div class="profile-action acme" id="profile-action">
-                            <div class="profile-expand" onclick="profile_open()">
-                                Profile
-                            </div>
-                            <div class="profile-expand-divider"></div>
-                            <div class="profile-expand" onclick="purchase_history()">
-                                Purchase History
-                            </div>
-                            <div class="profile-expand-divider"></div>
-                            <div class="profile-expand">
-                                Sign Out
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-title acme">
+                    Purchase history
                 </div>
-            </div>
-            <div class="content-container  flex-row">
-                <div class="content">
-                    <div class="title acme">
-                        Upcoming concerts
-                    </div>
-                    <div class="card-container">
-                        <div class="card">
+                <div class="modal-content-container">
+                    <div class="modal-content">
     
-                        </div>
-                        <div class="next-card" id="next-card">
-                            <div class="arrow" onclick="next_card()">
-    
-                            </div>
-                        </div>
-                        <div class="see-more acme" id="see-more" onclick="see_more()">
-                            See more
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="profile-page" id="profile-page">
-            <div class="close" onclick="profile_close()">
-                <img src="../../resources/arrow.png" height="50px" width="50px" alt="">
+        <div class="root">
+            <div class="container">
+                <div class="navbar-container">
+                    <div class="brand acme">
+                        <img src="../../resources/icon.png" height="100px" width="100px" alt="" srcset="">
+                        ADS Concert Ticket Booking
+                    </div>
+                    <div class="profile">
+                        <div class="profile-image">
+                            <div class="acme image" onclick="profile_action()">
+                                PI 
+                            </div>
+                            <!-- display image if not null spell out name -->
+                            <div class="profile-action acme" id="profile-action">
+                                <div class="profile-expand" onclick="profile_open()">
+                                    Profile
+                                </div>
+                                <div class="profile-expand-divider"></div>
+                                <div class="profile-expand" onclick="purchase_history()">
+                                    Purchase History
+                                </div>
+                                <div class="profile-expand-divider"></div>
+                                <div class="profile-expand">
+                                    Sign Out
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-container  flex-row">
+                    <div class="content">
+                        <div class="title acme">
+                            Upcoming concerts
+                        </div>
+                        <div class="card-container">
+                            <div class="card">
+        
+                            </div>
+                            <div class="next-card" id="next-card">
+                                <div class="arrow" onclick="next_card()">
+        
+                                </div>
+                            </div>
+                            <div class="see-more acme" id="see-more" onclick="see_more()">
+                                See more
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="profile-content" style="color: wheat;">
+            <div class="profile-page" id="profile-page">
+                <div class="close" onclick="profile_close()">
+                    <img src="../../resources/arrow.png" height="50px" width="50px" alt="">
+                </div>
+                <div class="profile-title acme">
+                    Profile
+                </div>
+                <div class="profile-content-container">
+                    <div class="profile-content view acme" id="view">
+                        <div class="button-container">
+                            <button class="acme" onclick="start_edit()">Edit</button>
+                        </div>
+                        <div class="name flex-row acme">
+                            <div class="label">
+                                NAME
+                            </div>
+                            <div class="value">
+                                IRFAN ZAHIR
+                            </div>
+                        </div>
+                        <div class="email flex-row acme">
+                            <div class="label">
+                                EMAIL
+                            </div>
+                            <div class="value">
+                                IRFAN@GMAIL.COM
+                            </div>
+                        </div>
+                        <div class="phone flex-row acme">
+                            <div class="label">
+                                PHONE
+                            </div>
+                            <div class="value">
+                                0123456789
+                            </div>
+                        </div>
+                        <div class="address flex-row acme">
+                            <div class="label">
+                                ADDRESS
+                            </div>
+                            <div class="value">
+                                PO12, BATU 10, BAKRI
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-content edit" id="edit">
+                        <div class="button-container">
+                            <button class="acme" onclick="save_edit()">Save</button>
+                        </div>
+                        <div>
+                            <input type="text" class="edit-box name acme" placeholder="IRFAN ZAHIR">
+                        </div>
+                        <div>
+                            <input type="text" class="edit-box email acme" placeholder="IRFAN@GMAIL.COM">
+                        </div>
+                        <div>
+                            <input type="text" class="edit-box phone acme" placeholder="0123456789">
+                        </div>
+                        <div>
+                            <textarea type="text" class="address acme" placeholder="PO12, BATU 10, BAKRI" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -81,12 +148,4 @@
 </body>
 </html>
 
-<!-- navbar -->
-    <!-- logo  -->
-    <!-- brand -->
-    <!-- profile picture -->
-        <!-- update profile -->
-        <!-- logout -->
-<!-- content -->
-    <!-- sales history -->
-    <!-- latest concert to be held (see more) -->
+<!-- todo: ticket component loop for purchase history if any -->

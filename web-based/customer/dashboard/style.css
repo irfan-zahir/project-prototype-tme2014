@@ -1,7 +1,10 @@
-
 body{
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
+}
+
+.body{
     width: 125vw;
     background-image: url('../../resources/dashboard.jpg');
     background-size: cover;
@@ -195,6 +198,7 @@ body{
 
 .see-more:hover{
     cursor: pointer;
+    background-color: #db6400;
     transform: scale(1.15);
 }
 
@@ -223,7 +227,7 @@ body{
     height: 50px;
     width: 50px;
     margin: 25px;
-    right: 0px;
+    right: 25px;
     position: absolute;
 }
 
@@ -231,9 +235,95 @@ body{
     cursor: pointer;
 }
 
-.profile-page > .profile-content{
-    height: 95%;
+.profile-page > .profile-content-container{
+    height: 85%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-content{
+    height: 50%;
+    width: 90%;
+    font-size: 21px;
+}
+
+.view{
+    padding-top: 100px;
+    display: block;
+}
+
+.view > div > .label{
+    width: 120px;
+    color: white;
+}
+
+.view > div > .value{
+    width: 65%;
+}
+
+.view > div > div{
+    margin: 5px
+}
+
+.edit{
+    padding-top: 100px;
+    display: none;
+}
+
+.edit-box{
+    width: 75%;
+    height: 35px;
+    margin: 5px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    font-size: 17px;
+}
+
+textarea{
+    width: 75%;
+    margin: 5px;
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 17px;
+} 
+
+.button-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.button-container > button{
+    margin: 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100px; font-size: 17px;
+}
+
+button:hover{
+    background-color: #db6400;
+    cursor: pointer;
+}
+
+
+.profile-title{
+    height: 5%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 30px;
+    color: white;
 }
 
 .modal-container{
@@ -257,4 +347,26 @@ body{
     background-color: teal;
     border-radius: 25px;
     padding: 25px;
+    position: relative;
+}
+
+.modal > .close{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.modal-title{
+    font-size: 30px;
+    height: 5%;
+    color: white;
+}
+
+.modal-content-container{
+    height: 95%;
+    width: 100%;
+    
 }

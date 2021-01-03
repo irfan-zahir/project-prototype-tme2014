@@ -80,8 +80,23 @@ function purchase_history(){
     })
 }
 
+function close_modal(){
+    var elements = document.getElementById('modal-container');
+    
+    var animation = anime.timeline({
+        easing: 'easeInOutSine',
+        duration: 500
+    });
+
+    animation.add({
+        targets: elements,
+        opacity: 0,
+        zIndex: -1
+    })
+}
+
 window.onclick = (event)=>{
-    var modal = document.getElementById('modal');
+    
     var elements = document.getElementById('modal-container');
     if(event.target == elements){
         console.log('hit')
@@ -96,6 +111,22 @@ window.onclick = (event)=>{
             zIndex: -1
         })
     }
+}
+
+function save_edit(){
+    var view = document.getElementById('view');
+    var edit = document.getElementById('edit');
+
+    edit.style.display = 'none'
+    view.style.display = 'block'
+}
+
+function start_edit(){
+    var view = document.getElementById('view');
+    var edit = document.getElementById('edit');
+
+    view.style.display = 'none'
+    edit.style.display = 'block'
 }
 
 function signout(){
