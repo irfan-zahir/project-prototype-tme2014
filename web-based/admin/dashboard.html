@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../resources/icon.png" sizes="32x32">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dashboard.css">
+    <script src="./dashboard.js"></script>
+    <title>Admin</title>
+</head>
+<body>
+    <div class="root">
+        <div class="navbar-container">
+            <div class="brand acme">
+                <img src="../resources/icon.png" height="100px" width="100px" alt="" srcset="">
+                Admin Section
+            </div>
+            <div class="logout-container">
+                <div class="logout pointer" onmouseover="onMouseOver()" onmouseout="onMouseOut()" onclick="logout()">
+                    <img src="../resources/logout.png" alt="">
+                    <span class="tooltip " id="tooltip">Logout</span>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top-section">
+                <div class="title anton">
+                    <div>
+                        List of user
+                    </div>
+                    <div class="see-more">
+                        <div class="pointer button">
+                            See more >>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-list">
+                    <!-- for list here display using php -->
+                </div>
+                <!-- list users -->
+            </div>
+            <div class="bottom-section">
+                <!-- list concerts 3 most upcoming concerts in 1 screen -->
+                <div class="title anton">
+                    <div>
+                        Upcoming concerts
+                    </div>
+                    <div class="see-more">
+                        <div class="pointer button">
+                            Add concert
+                        </div>
+                        <div class="pointer button">
+                            See more >>
+                        </div>
+                    </div>
+                </div>
+                <div class="concert-list">
+                    <!-- for list here display using php -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- navbar admin section logout -->
+<!-- top section list of users. gambar nama email button delete -->
+<!-- bottom section  3 most recent concert, onclick div edit details, see more button n add new concert (sebelah2) -->
