@@ -245,7 +245,7 @@ body{
 .profile-content{
     height: 50%;
     width: 90%;
-    font-size: 21px;
+    font-size: 19px;
 }
 
 .view{
@@ -272,7 +272,7 @@ body{
 }
 
 .edit-box{
-    width: 75%;
+    width: 85%;
     height: 35px;
     margin: 5px;
     outline: none;
@@ -283,7 +283,7 @@ body{
 }
 
 textarea{
-    width: 75%;
+    width: 85%;
     margin: 5px;
     resize: none;
     outline: none;
@@ -295,7 +295,7 @@ textarea{
 } 
 
 .button-container{
-    width: 80%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

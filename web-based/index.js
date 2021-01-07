@@ -1,5 +1,4 @@
 
-
 function buttonSwitchToRegister(){
     const signin = document.getElementById('signin')
     const signup = document.getElementById('signup')
@@ -15,18 +14,33 @@ function buttonSwitchToLogin(){
 }
 
 function loginHandle(){
-    var email = document.getElementById('loginEmail')
-    var pwd = document.getElementById('loginPwd')
+    var email = document.getElementById('loginEmail').value
+    var pwd = document.getElementById('loginPwd').value
 
-    var validated = validateEmail(email) && pwd
+    var validated = email && pwd
+    email=="" ? 
+    document.getElementById('e-reg-email').setAttribute("style", 'visibility: visible;'):
+    document.getElementById('e-reg-email').setAttribute("style", 'visibility: hidden;')
+
+    pwd=="" ? 
+    document.getElementById('e-reg-pwd').setAttribute("style", 'visibility: visible;'):
+    document.getElementById('e-reg-pwd').setAttribute("style", 'visibility: hidden;');
+    
+    if(validated){
+        $.post(
+            './auth-php/authenticate.php',
+            {email: email, password: pwd},
+            (data)=>{
+                if(data=='success'){
+                    document.getElementById('login-form').submit()
+                }else{
+                    document.getElementById('e-reg-pwd').innerHTML = 'Wrong password'
+                    document.getElementById('e-reg-pwd').style.visibility = 'visible'
+                }
+            }
+        )
+    }
 }
-
-// $(document).ready(()=>{
-//     $('#register-form').submit(e=>{
-//         e.preventDefault()
-//         console.log('submitted')
-//     })
-// })
 
 
 function validateForm(){

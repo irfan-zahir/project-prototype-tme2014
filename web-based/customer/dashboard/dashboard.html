@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['email'])) header("Location: /web-based")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,9 +53,9 @@
                                     Purchase History
                                 </div>
                                 <div class="profile-expand-divider"></div>
-                                <div class="profile-expand">
+                                <a style="text-decoration: none; color: black;" class="profile-expand" href="../../auth-php/logout.php">
                                     Sign Out
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>

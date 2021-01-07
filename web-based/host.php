@@ -10,11 +10,10 @@
     $dbname = "dbconcert";
 
 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-    if(!$conn){
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if($conn->connect_errno){
         return false;
     }
-
+    
     return $conn;
 ?>
